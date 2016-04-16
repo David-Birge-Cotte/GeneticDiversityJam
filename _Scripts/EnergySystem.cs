@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(Agent))]
 public class EnergySystem : MonoBehaviour 
 {
 	// PROPERTIES //
@@ -11,14 +12,7 @@ public class EnergySystem : MonoBehaviour
 	// MONOBEHAVIOR //
 	void Awake()
 	{
-		try
-		{
 			_agent = GetComponent<Agent>();
-		}
-		catch
-		{
-			Debug.LogError("No Agent Found");
-		}
 	}
 
 	void Start () 

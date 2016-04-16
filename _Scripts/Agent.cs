@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(SpriteRenderer))]
 public class Agent : MonoBehaviour 
 {
 	// PROPERTIES //
@@ -35,4 +36,27 @@ public class Agent : MonoBehaviour
 
 	public float EnergyConsumptionPerSecond;
 	public float EnergyConsumedPerUnityUnit;
+
+	static float SizeEnergyRatio = 1;
+	private DNA _dna;
+
+	public float VisionRange = 1000;
+
+	// Monobehavior //
+	void Awake()
+	{
+		EnergyConsumedPerUnityUnit = GetComponent<SpriteRenderer>().bounds.size.x * SizeEnergyRatio;
+		EnergyConsumptionPerSecond = GetComponent<SpriteRenderer>().bounds.size.x * SizeEnergyRatio;
+		_dna = new DNA();
+		_dna.GenerateNewGeneticCode();
+	}
+
+	void OnTriggerEnter2D(Collider2D col)
+	{
+		if (col.gameObject.GetComponent<Food>() != null)
+		{
+			Energy += col.gameObject.GetComponent<Food>().Amount;
+			Destroy(col.gameObject);
+		}
+	}
 }
