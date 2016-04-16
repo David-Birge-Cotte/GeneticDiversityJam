@@ -30,7 +30,7 @@ public class EnergySystem : MonoBehaviour
 	{
 		if (_firstFramePassed && _agent.Position2D != _agentLastPosition)
 		{
-			_agent.Energy -= Vector2.Distance(_agent.Position2D, _agentLastPosition);
+			_agent.Energy -= Vector2.Distance(_agent.Position2D, _agentLastPosition) * _agent.EnergyConsumedPerUnityUnit;
 		}
 		_agentLastPosition = _agent.Position2D;
 		_firstFramePassed = true;
@@ -45,7 +45,7 @@ public class EnergySystem : MonoBehaviour
 			t=1;
 			while(t>0)
 			{
-				t -= Time.deltaTime;
+				t -= Time.deltaTime * energyConsumedPerSecond;
 				yield return new WaitForEndOfFrame();
 			}
 		}
