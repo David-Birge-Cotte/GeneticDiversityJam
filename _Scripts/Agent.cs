@@ -28,7 +28,7 @@ public class Agent : MonoBehaviour
 			_energy = value;
 			if (_energy < 0)
 			{
-				//kill Agent
+				//TODO kill Agent
 			}
 		}
 	}
