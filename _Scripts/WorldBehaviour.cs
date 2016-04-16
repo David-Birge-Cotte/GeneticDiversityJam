@@ -19,7 +19,7 @@ public class WorldBehaviour : MonoBehaviour {
     // Objects
     public int maxFoodInWorld = 20;
     public GameObject foodGO;
-    private List<GameObject> foodObjects;
+	public static List<GameObject> foodObjects;
 
     // Logic
     public static bool bSpawnsFood = true;
