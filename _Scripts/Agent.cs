@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(SpriteRenderer))]
 public class Agent : MonoBehaviour 
 {
 	// PROPERTIES //
@@ -28,11 +29,21 @@ public class Agent : MonoBehaviour
 			_energy = value;
 			if (_energy < 0)
 			{
-				//kill Agent
+				//TODO kill Agent
 			}
 		}
 	}
 
 	public float EnergyConsumptionPerSecond;
 	public float EnergyConsumedPerUnityUnit;
+
+	static float SizeEnergyRatio = 1;
+
+	// Monobehavior //
+	void Awake()
+	{
+		EnergyConsumedPerUnityUnit = GetComponent<SpriteRenderer>().bounds.size.x * SizeEnergyRatio;
+		EnergyConsumptionPerSecond = GetComponent<SpriteRenderer>().bounds.size.x * SizeEnergyRatio;
+	}
+
 }
