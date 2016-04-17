@@ -17,9 +17,11 @@ public class WorldBehaviour : MonoBehaviour {
     public int ySize = 20;
 
     // Objects
+    public int nbAgentToSpawn = 50;
     public int maxFoodInWorld = 20;
     public GameObject foodGO;
 	public static List<GameObject> foodObjects;
+    public GameObject agent;
 
     // Logic
     public static bool bSpawnsFood = true;
@@ -34,22 +36,49 @@ public class WorldBehaviour : MonoBehaviour {
 
         // List Initialisation
         foodObjects = new List<GameObject>();
-        // Starts the delay calculations
-        StartCoroutine("delayCalculation");
-	}
-	
-	void Update ()
-    {
-        // Spawns Food and then Wait
-	    if(_delay <= 0)
+
+        StartCoroutine("SpawnLife");
+
+        for(int i = 0; i<maxFoodInWorld; i++)
         {
-            if(foodObjects.Count < maxFoodInWorld)
+            SpawnFoodAtRandomLocation();
+        }
+
+	}
+
+    IEnumerator SpawnLife()
+    {
+        for (int i = 0; i < nbAgentToSpawn; i++)
+        {
+            GameObject agentTemp = Instantiate(agent, new Vector3(i - nbAgentToSpawn / 2, i - nbAgentToSpawn / 2, 0), Quaternion.identity) as GameObject;
+            yield return new WaitForEndOfFrame();
+        }
+        yield return null;
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            StartCoroutine("SpawnLife");
+        }
+
+
+        // Spawns Food and then Wait
+        if (_delay <= 0)
+        {
+            if (foodObjects.Count < maxFoodInWorld)
             {
                 SpawnFoodAtRandomLocation();
-            }            
+            }
             _delay = spawnTime + Random.Range(0, spawnTimeAleaVariation);
         }
-	}
+
+        if(bSpawnsFood)
+        {
+            _delay -= Time.deltaTime;
+        }
+    }
 
     /// <summary>
     /// Spawns A unit of Food on the map
@@ -69,13 +98,11 @@ public class WorldBehaviour : MonoBehaviour {
         foodObjects.Add(_spawnedFood.gameObject);
     }
 
-    IEnumerator delayCalculation()
+    public void Mutate()
     {
-        while (bSpawnsFood)
+        foreach(Agent a in GameObject.FindObjectsOfType<Agent>())
         {
-            _delay -= Time.deltaTime;
-            yield return new WaitForEndOfFrame();
+            a.Mutate();
         }
-        yield return null;
     }
 }

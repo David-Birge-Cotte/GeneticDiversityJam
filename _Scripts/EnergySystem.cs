@@ -12,7 +12,7 @@ public class EnergySystem : MonoBehaviour
 	// MONOBEHAVIOR //
 	void Awake()
 	{
-			_agent = GetComponent<Agent>();
+	    _agent = GetComponent<Agent>();
 	}
 
 	void Start () 
@@ -39,9 +39,10 @@ public class EnergySystem : MonoBehaviour
 			t=1;
 			while(t>0)
 			{
-				t -= Time.deltaTime * energyConsumedPerSecond;
+				t -= Time.deltaTime;
 				yield return new WaitForEndOfFrame();
 			}
+            _agent.Energy -= energyConsumedPerSecond;
 		}
 	}
 }

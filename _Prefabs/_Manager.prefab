@@ -45,6 +45,7 @@ MonoBehaviour:
   ySize: 20
   maxFoodInWorld: 20
   foodGO: {fileID: 107570, guid: 0337fb23373c8cb469e372f106ad91c1, type: 2}
+  agent: {fileID: 117864, guid: 456f1cd6b45b7184db66c57e467b60eb, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
