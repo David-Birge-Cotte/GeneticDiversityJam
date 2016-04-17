@@ -148,6 +148,10 @@ Prefab:
       propertyPath: nbAgentToSpawn
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 11412924, guid: 8f5e45d2bb12bd14eb49b76ef3b88c1a, type: 2}
+      propertyPath: sliderText
+      value: 
+      objectReference: {fileID: 1802353403}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f5e45d2bb12bd14eb49b76ef3b88c1a, type: 2}
   m_IsPrefabParent: 0
@@ -258,8 +262,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 02c682a9c245409488ae45b5c4d2a323, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1063,14 +1067,14 @@ MonoBehaviour:
   m_FillRect: {fileID: 518935857}
   m_HandleRect: {fileID: 1440365794}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.1
   m_MaxValue: 6
   m_WholeNumbers: 0
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2108980428}
+      - m_Target: {fileID: 2108980427}
         m_MethodName: ChangeSpeed
         m_Mode: 0
         m_Arguments:
@@ -1153,6 +1157,7 @@ Canvas:
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -1632,24 +1637,15 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2081255776}
---- !u!1 &2108980425 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 132746, guid: 8f5e45d2bb12bd14eb49b76ef3b88c1a, type: 2}
-  m_PrefabInternal: {fileID: 49515774}
 --- !u!114 &2108980426 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11470134, guid: 8f5e45d2bb12bd14eb49b76ef3b88c1a,
     type: 2}
   m_PrefabInternal: {fileID: 49515774}
   m_Script: {fileID: 11500000, guid: a9cfa17f891228a44b36e10f91a81423, type: 3}
---- !u!114 &2108980428
+--- !u!114 &2108980427 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2108980425}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
+  m_PrefabParentObject: {fileID: 11412924, guid: 8f5e45d2bb12bd14eb49b76ef3b88c1a,
+    type: 2}
+  m_PrefabInternal: {fileID: 49515774}
   m_Script: {fileID: 11500000, guid: 0a13ac841769c60409a5e39f7fcc8cfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
