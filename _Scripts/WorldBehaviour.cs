@@ -23,6 +23,8 @@ public class WorldBehaviour : MonoBehaviour {
 	public static List<GameObject> foodObjects;
     public GameObject agent;
 
+    public static List<Agent> individus;
+
     // Logic
     public static bool bSpawnsFood = true;
     //----------------------------------------------------------------
@@ -36,6 +38,7 @@ public class WorldBehaviour : MonoBehaviour {
 
         // List Initialisation
         foodObjects = new List<GameObject>();
+        individus = new List<Agent>();
 
         StartCoroutine("SpawnLife");
 
@@ -50,8 +53,8 @@ public class WorldBehaviour : MonoBehaviour {
     {
         for (int i = 0; i < nbAgentToSpawn; i++)
         {
-            GameObject agentTemp = Instantiate(agent, new Vector3(i - nbAgentToSpawn / 2, i - nbAgentToSpawn / 2, 0), Quaternion.identity) as GameObject;
-            yield return new WaitForEndOfFrame();
+            GameObject agentTemp = Instantiate(agent, new Vector3(i*2 - nbAgentToSpawn / 2, i*2 - nbAgentToSpawn / 2, 0), Quaternion.identity) as GameObject;
+            individus.Add(agentTemp.GetComponent<Agent>());
         }
         yield return null;
     }

@@ -122,7 +122,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 427974, guid: 8f5e45d2bb12bd14eb49b76ef3b88c1a, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11470134, guid: 8f5e45d2bb12bd14eb49b76ef3b88c1a, type: 2}
       propertyPath: ySize
@@ -152,6 +152,10 @@ Prefab:
       propertyPath: sliderText
       value: 
       objectReference: {fileID: 1802353403}
+    - target: {fileID: 11412924, guid: 8f5e45d2bb12bd14eb49b76ef3b88c1a, type: 2}
+      propertyPath: individualText
+      value: 
+      objectReference: {fileID: 439460140}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f5e45d2bb12bd14eb49b76ef3b88c1a, type: 2}
   m_IsPrefabParent: 0
@@ -501,7 +505,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Life generation attempt
+  m_Text: Life generation
 --- !u!222 &262461117
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -539,8 +543,8 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -316.6, y: -196.29997}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -256.1, y: -196.29997}
+  m_SizeDelta: {x: 280.9, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &439460140
 MonoBehaviour:
@@ -574,7 +578,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Experimentation number 42
+  m_Text: 'Number of Individuals : x'
 --- !u!222 &439460141
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1040,7 +1044,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}

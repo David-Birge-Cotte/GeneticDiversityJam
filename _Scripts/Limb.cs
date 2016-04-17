@@ -76,28 +76,28 @@ public class Limb : MonoBehaviour
             switch (forceType)
             {
                 case ForceType.R_F:
-                    rb.AddForce(Vector2.up * power * Mathf.Cos(angle) + dir.normalized * power / 4, ForceMode2D.Force);
+                    rb.AddForce(Vector2.up * power * Mathf.Cos(angle) + dir.normalized * power / 10, ForceMode2D.Force);
                     break;
                 case ForceType.L_F:
-                    rb.AddForce(Vector2.right * power * Mathf.Cos(angle) + dir.normalized * power / 4, ForceMode2D.Force);
+                    rb.AddForce(Vector2.right * power * Mathf.Cos(angle) + dir.normalized * power / 10, ForceMode2D.Force);
                     break;
                 case ForceType.F_F:
-                    rb.AddForce(Vector2.left * power * Mathf.Cos(angle) + dir.normalized * power / 4, ForceMode2D.Force);
+                    rb.AddForce(Vector2.left * power * Mathf.Cos(angle) + dir.normalized * power / 10, ForceMode2D.Force);
                     break;
                 case ForceType.R_R:
-                    rb.AddForce(Vector2.down * power * Mathf.Cos(angle) + dir.normalized * power / 4, ForceMode2D.Force);
+                    rb.AddForce(Vector2.down * power * Mathf.Cos(angle) + dir.normalized * power / 10, ForceMode2D.Force);
                     break;
                 case ForceType.L_R:
-                    rb.AddForce(Vector2.up * power * Mathf.Cos(angle) + dir.normalized * power / 4, ForceMode2D.Force);
+                    rb.AddForce(Vector2.up * power * Mathf.Cos(angle) + dir.normalized * power / 10, ForceMode2D.Force);
                     break;
                 case ForceType.F_R:
-                    rb.AddForce(Vector2.right * power * Mathf.Cos(angle) + dir.normalized * power / 4, ForceMode2D.Force);
+                    rb.AddForce(Vector2.right * power * Mathf.Cos(angle) + dir.normalized * power / 10, ForceMode2D.Force);
                     break;
                 case ForceType.R_L:
-                    rb.AddForce(Vector2.down * power * Mathf.Cos(angle) + dir.normalized * power / 4, ForceMode2D.Force);
+                    rb.AddForce(Vector2.down * power * Mathf.Cos(angle) + dir.normalized * power / 10, ForceMode2D.Force);
                     break;
                 case ForceType.L_L:
-                    rb.AddForce(Vector2.left * power * Mathf.Cos(angle) + dir.normalized * power / 4, ForceMode2D.Force);
+                    rb.AddForce(Vector2.left * power * Mathf.Cos(angle) + dir.normalized * power / 10, ForceMode2D.Force);
                     break;
                 case ForceType.F_L:
                     //rb.AddForce(Vector2.up * power, ForceMode2D.Force);

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
 
     public Text sliderText;
+    public Text individualText;
 
 	// Use this for initialization
 	void Start () {
@@ -13,6 +14,11 @@ public class GameManager : MonoBehaviour {
             Debug.LogError("Slider Text missing in script !");
         }
 	}
+
+    void Update()
+    {
+        individualText.text = "Number of Individuals : " + WorldBehaviour.individus.Count.ToString();
+    }
 
     public void ChangeSpeed(float speed)
     {

@@ -36,6 +36,10 @@ public class Agent : MonoBehaviour
                 {
                     Destroy(limb);
                 }
+
+                GameObject part = Resources.Load<GameObject>("Death");
+                Instantiate(part, transform.position, Quaternion.identity);
+
                 Destroy(this.gameObject);
             }
 		}
@@ -96,7 +100,9 @@ public class Agent : MonoBehaviour
             offspring.GetComponent<Agent>().dna.Mutate();
             offspring.GetComponent<Agent>().hasMutated = true;
             offspring.GetComponent<Agent>().CompileDNA();
-            offspring.GetComponent<Agent>().Energy = 5;
+            offspring.GetComponent<Agent>().Energy = 3;
+
+            WorldBehaviour.individus.Add(offspring.GetComponent<Agent>());
         }
 	}
 
