@@ -1,4 +1,38 @@
-﻿0000 : Nouveau membre / fin de membre
+﻿0000 : Nouveau membre [à la suite] (et fin de membre) 
+0001 : Sin(angleEnRad) * power
+0010 : Cos(angleEnRad) * power
+0011 : 
+0100 : 
+0101 : 
+0110 : 
+0111 : 
+1000 : 
+1001 : 
+1010 : 
+1011 : 
+1100 : 
+1101 : 
+1110 : 
+1111 : Nouveau membre [sur le corps] (et fin de membre) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[OLD]
+0000 : Nouveau membre / fin de membre
 0001 : force vers la droite quand bouffe devant
 0010 : force vers la gauche quand bouffe devant
 0011 : force vers l'avant quand bouffe devant

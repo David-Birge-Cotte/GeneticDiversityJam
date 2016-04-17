@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 555de1bc05f9cb34981d45c635e7eb0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _energy: 2.5
+  _energy: 3
   EnergyConsumptionPerSecond: 0
   EnergyConsumedPerUnityUnit: 0
   VisionRange: 100
