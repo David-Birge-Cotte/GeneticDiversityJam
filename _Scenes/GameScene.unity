@@ -122,7 +122,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 427974, guid: 8f5e45d2bb12bd14eb49b76ef3b88c1a, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11470134, guid: 8f5e45d2bb12bd14eb49b76ef3b88c1a, type: 2}
       propertyPath: ySize
