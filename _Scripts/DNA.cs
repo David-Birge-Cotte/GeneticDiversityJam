@@ -9,12 +9,12 @@ public class DNA
 
     public void GenerateNewGeneticCode()
     {
-        string geneticCodeString = "";
+        //string geneticCodeString = "";
         geneticCode = new byte[nbGenesFirstGeneration * 4];
         for(int i = 0; i < geneticCode.Length; i++)
         {
             geneticCode[i] = (byte)(int)Random.Range(0, 2); // vieux Cast de merde
-            geneticCodeString += geneticCode[i].ToString();
+            //geneticCodeString += geneticCode[i].ToString();
         }
         
         genesList = new string[nbGenesFirstGeneration];

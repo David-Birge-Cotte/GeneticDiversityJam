@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 427974}
   - 114: {fileID: 11470134}
+  - 114: {fileID: 11412924}
   m_Layer: 0
   m_Name: _Manager
   m_TagString: Untagged
@@ -28,6 +29,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11412924
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 132746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a13ac841769c60409a5e39f7fcc8cfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11470134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -41,9 +53,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnTime: 1
   spawnTimeAleaVariation: 1
-  xSize: 20
-  ySize: 20
-  maxFoodInWorld: 20
+  xSize: 340
+  ySize: 180
+  nbAgentToSpawn: 150
+  maxFoodInWorld: 200
   foodGO: {fileID: 107570, guid: 0337fb23373c8cb469e372f106ad91c1, type: 2}
   agent: {fileID: 117864, guid: 456f1cd6b45b7184db66c57e467b60eb, type: 2}
 --- !u!1001 &100100000
