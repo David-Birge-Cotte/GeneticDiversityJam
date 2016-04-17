@@ -53,7 +53,7 @@ public class WorldBehaviour : MonoBehaviour {
     {
         for (int i = 0; i < nbAgentToSpawn; i++)
         {
-            GameObject agentTemp = Instantiate(agent, new Vector3(i*2 - nbAgentToSpawn / 2, i*2 - nbAgentToSpawn / 2, 0), Quaternion.identity) as GameObject;
+            GameObject agentTemp = Instantiate(agent, new Vector3(-2, i*2 - nbAgentToSpawn / 2, 0), Quaternion.identity) as GameObject;
             individus.Add(agentTemp.GetComponent<Agent>());
         }
         yield return null;
