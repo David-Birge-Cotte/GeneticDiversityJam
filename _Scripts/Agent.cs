@@ -39,6 +39,7 @@ public class Agent : MonoBehaviour
 
                 GameObject part = Resources.Load<GameObject>("Death");
                 Instantiate(part, transform.position, Quaternion.identity);
+                WorldBehaviour.individus.Remove(this);
 
                 Destroy(this.gameObject);
             }
