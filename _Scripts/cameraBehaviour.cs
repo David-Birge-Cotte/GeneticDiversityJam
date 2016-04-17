@@ -13,6 +13,9 @@ public class cameraBehaviour : MonoBehaviour {
 	public float MinOrthoSize;
 	private BlurOptimized _blurScript;
 
+	private Vector3 Pivot;
+	private bool Dragging = false;
+
 	private float OrthoSize
 	{
 		get
@@ -56,7 +59,30 @@ public class cameraBehaviour : MonoBehaviour {
 
 	void ReadInputs()
 	{
-		transform.Translate((Input.GetAxis("Horizontal") * Vector3.right + Input.GetAxis("Vertical") * Vector3.up) * speed * Time.deltaTime / Time.timeScale);
+		Vector3 MouseWorldPosition = _camera.ScreenToWorldPoint(Input.mousePosition);
+		Vector3 cameraStartPosition = new Vector3();
+		//transform.Translate((Input.GetAxis("Horizontal") * Vector3.right + Input.GetAxis("Vertical") * Vector3.up) * speed * Time.deltaTime / Time.timeScale);
 		OrthoSize -= Input.GetAxis("Mouse ScrollWheel") * zoomSpeed * Time.deltaTime * 10 / Time.timeScale * ZoomSensibility.Evaluate((OrthoSize-MinOrthoSize)/ (MaxOrthoSize-MinOrthoSize));
+		if (Input.GetMouseButtonDown(1))
+		{
+			Pivot = MouseWorldPosition;
+			cameraStartPosition = transform.position;
+			Dragging = true;
+			//Debug.Log("Pivot Position : " + Pivot);
+		}
+		if (Input.GetMouseButtonUp(1))
+		{
+			Dragging = false;
+		}
+		if (Dragging == true && Input.GetMouseButton(1))
+		{
+			Vector2 temporare = Vector2.Lerp(new Vector2(transform.position.x, transform.position.y),
+											 new Vector2(cameraStartPosition.x, cameraStartPosition.y) +
+											 new Vector2(Pivot.x, Pivot.y) -
+											 new Vector2 (MouseWorldPosition.x, MouseWorldPosition.y), 0.5f);
+			//Debug.Log("Target : " + new Vector3(temporare.x, temporare.y, transform.position.z));
+			transform.position = new Vector3(temporare.x, temporare.y, transform.position.z);
+
+		}
 	}
 }
