@@ -63,17 +63,17 @@ public class cameraBehaviour : MonoBehaviour {
 		Vector3 MouseWorldPosition = _camera.ScreenToWorldPoint(Input.mousePosition);
 		transform.Translate((Input.GetAxis("Horizontal") * Vector3.right + Input.GetAxis("Vertical") * Vector3.up) * speed * Time.deltaTime / Time.timeScale);
 		OrthoSize -= Input.GetAxis("Mouse ScrollWheel") * zoomSpeed * Time.deltaTime * 10 / Time.timeScale * ZoomSensibility.Evaluate((OrthoSize-MinOrthoSize)/ (MaxOrthoSize-MinOrthoSize));
-		if (Input.GetMouseButtonDown(0))
+		if (Input.GetMouseButtonDown(1))
 		{
 			Pivot = Input.mousePosition;
 			cameraStartPosition = transform.position;
 			Dragging = true;
 		}
-		if (Input.GetMouseButtonUp(0))
+		if (Input.GetMouseButtonUp(1))
 		{
 			Dragging = false;
 		}
-		if (Dragging == true && Input.GetMouseButton(0))
+		if (Dragging == true && Input.GetMouseButton(1))
 		{	
 			Vector3 DifOnScreen = _camera.ScreenToWorldPoint(Pivot) - _camera.ScreenToWorldPoint(Input.mousePosition);
 			//Debug.Log(DifOnScreen);
