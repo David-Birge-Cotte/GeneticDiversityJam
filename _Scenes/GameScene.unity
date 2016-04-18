@@ -134,7 +134,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11470134, guid: 8f5e45d2bb12bd14eb49b76ef3b88c1a, type: 2}
       propertyPath: maxFoodInWorld
-      value: 300
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 11470134, guid: 8f5e45d2bb12bd14eb49b76ef3b88c1a, type: 2}
       propertyPath: spawnTime
@@ -146,7 +146,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11470134, guid: 8f5e45d2bb12bd14eb49b76ef3b88c1a, type: 2}
       propertyPath: nbAgentToSpawn
-      value: 30
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 11412924, guid: 8f5e45d2bb12bd14eb49b76ef3b88c1a, type: 2}
       propertyPath: sliderText
